@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+/* Aplica a todos los elementos input de tipo 'text' */
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Aplica a cualquier elemento con un atributo 'data-role' igual a 'main' */
+[data-role="main"] {
+    background-color: #f8f8f8;
+}
+/* Aplica estilos a cualquier enlace al pasar el mouse sobre él */
+a:hover {
+    color: red;
+}
+
+/* Aplica estilos al primer elemento p de su contenedor */
+p:first-child {
+    font-weight: bold;
+}
+/* Estiliza la primera letra de cada elemento p */
+p::first-letter {
+    font-size: 200%;
+    color: blue;
+}
+
+/* Añade contenido antes de cada elemento h1 */
+h1::before {
+    content: "★ ";
+    color: orange;
+}
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.box {
+    flex: 1; /* Cada box tomará el mismo espacio disponible */
+    margin: 10px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Sidebar y contenido */
+    grid-template-rows: 100px auto 100px; /* Header, contenido, footer */
+    gap: 10px; /* Espacio entre las celdas del grid */
+    height: 100vh; /* Altura total de la ventana de visualización */
+}
+
+header, footer {
+    grid-column: 1 / -1; /* Ocupan toda la anchura */
+    background-color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+aside {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
